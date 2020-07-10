@@ -83,14 +83,22 @@
                 <div class="title m-b-md">
                     Meduza
                 </div>
+                @if (Route::has('login'))
+                    @auth
+                    <div class="links">
+                        <a href='news'>News</a>
+                        <a href='articles'>Articles</a>
+                        <a href='shapito'>Shapito</a>
+                    </div>
 
-                <div class="links">
-                    <a href='news'>News</a>
-                    <a href='cards'>Cards</a>
-                    <a href='articles'>Articles</a>
-                    <a href='shapito'>Shapito</a>
-                    <a href='polygon'>Polygon</a>
-                </div>
+                    @else
+                        <div class="links">
+                            <a href='login'>News</a>
+                            <a href='login'>Articles</a>
+                            <a href='login'>Shapito</a>
+                        </div>
+                    @endauth
+                    @endif
             </div>
         </div>
     </body>

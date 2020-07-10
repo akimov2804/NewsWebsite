@@ -18,8 +18,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/news', 'NewsController@index')->name('news');
-Route::get('/cards', 'CardsController@index')->name('cards');
-Route::get('/articles', 'ArticlesController@index')->name('articles');
+Route::get('/news', 'HomeController@news')->name('news');
+Route::get('/articles', 'HomeController@articles')->name('articles');
 Route::get('/shapito', 'ShapitoController@index')->name('shapito');
-Route::get('/polygon', 'PolygonController@index')->name('polygon');

@@ -35,14 +35,21 @@
                     <ul class="navbar-nav mr-auto">
 
                     </ul>
+                    @if (Route::has('login'))
+                        @auth
                     <nav class="my-2 my-md-0 mr-md-3">
                         <a class="p-3 text-dark" href="/home">Home</a>
                         <a class="p-3 text-dark" href="/news">News</a>
-                        <a class="p-3 text-dark" href="/cards">Cards</a>
                         <a class="p-3 text-dark" href="/articles">Articles</a>
                         <a class="p-3 text-dark" href="/shapito">Shapito</a>
-                        <a class="p-3 text-dark" href="/polygon">Polygon</a>
                     </nav>
+                    @else
+                            <a class="p-3 text-dark" href="/login">Home</a>
+                            <a class="p-3 text-dark" href="/login">News</a>
+                            <a class="p-3 text-dark" href="/login">Articles</a>
+                            <a class="p-3 text-dark" href="/login">Shapito</a>
+                    @endauth
+                    @endif
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
