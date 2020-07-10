@@ -51,7 +51,7 @@ class HomeController extends Controller
         foreach ($response['documents'] as $key => $value)
         {
             $news = new News();
-            $news->url = "https://meduza.io/" . $value['url'];
+            $news->url = $value['url'];
             $news->title = $value['title'];
             $news->type = stristr($value['url'], '/', true);
             if($value['prefs']['outer']['elements']['image']['show'])
@@ -89,7 +89,7 @@ class HomeController extends Controller
         foreach ($response['documents'] as $key => $value)
         {
             $article = new Articles();
-            $article->url = "https://meduza.io/" . $value['url'];
+            $article->url = $value['url'];
             $article->title = $value['title'];
             $article->type = stristr($value['url'], '/', true);
             if($value['prefs']['outer']['elements']['image']['show'])
@@ -127,7 +127,7 @@ class HomeController extends Controller
         foreach ($response['documents'] as $key => $value)
         {
             $shapito = new Shapito();
-            $shapito->url = "https://meduza.io/" . $value['url'];
+            $shapito->url = $value['url'];
             $shapito->title = $value['title'];
             $shapito->type = stristr($value['url'], '/', true);
             if($value['prefs']['outer']['elements']['image']['show'])
@@ -141,5 +141,74 @@ class HomeController extends Controller
             $shapito->save();
         }
         return view('shapito', ['data' => Shapito::all()]);
+    }
+    public function ReadNews($id)
+    {
+        $url = DB::table('News')->where('id', $id)->first()->url;
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => "https://meduza.io/api/v3/$url",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
+
+        $response = curl_exec($curl);
+
+
+        curl_close($curl);
+        $response = json_decode($response, true);
+        return view('read', ['act' => $response['root']['content']['body']]);
+    }
+    public function ReadArticles($id)
+    {
+        $url = DB::table('Articles')->where('id', $id)->first()->url;
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => "https://meduza.io/api/v3/$url",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
+
+        $response = curl_exec($curl);
+
+
+        curl_close($curl);
+        $response = json_decode($response, true);
+        return view('read', ['act' => $response['root']['content']['body']]);
+    }
+    public function ReadShapito($id)
+    {
+        $url = DB::table('Shapitos')->where('id', $id)->first()->url;
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => "https://meduza.io/api/v3/$url",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
+
+        $response = curl_exec($curl);
+
+
+        curl_close($curl);
+        $response = json_decode($response, true);
+        return view('read', ['act' => $response['root']['content']['body']]);
     }
 }

@@ -13,7 +13,7 @@
                     <img src="{{$el->image}}" class="card-img-top" alt="..." width=18rem height=150rem>
                     <div class="card-body">
                         <p class="card-text">{{$el->title}}</p>
-                        <a href="{{$el->url}}" class="btn btn-primary" >More</a>
+                        <a href="{{route('articles/read', $el->id, $el->url)}}" class="btn btn-primary" >More</a>
                     </div>
                 </div>
             @endforeach

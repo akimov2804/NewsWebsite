@@ -21,3 +21,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/news', 'HomeController@news')->name('news');
 Route::get('/articles', 'HomeController@articles')->name('articles');
 Route::get('/shapito', 'HomeController@shapito')->name('shapito');
+Route::get('news/read/{id}', 'HomeController@ReadNews')->name('news/read');
+Route::get('articles/read/{id}', 'HomeController@ReadArticles')->name('articles/read');
+Route::get('shapito/read/{id}', 'HomeController@ReadShapito')->name('shapito/read');
