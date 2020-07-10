@@ -20,4 +20,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/news', 'HomeController@news')->name('news');
 Route::get('/articles', 'HomeController@articles')->name('articles');
-Route::get('/shapito', 'ShapitoController@index')->name('shapito');
+Route::get('/shapito', 'HomeController@shapito')->name('shapito');
