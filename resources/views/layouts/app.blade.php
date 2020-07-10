@@ -42,12 +42,14 @@
                         <a class="p-3 text-dark" href="/news">News</a>
                         <a class="p-3 text-dark" href="/articles">Articles</a>
                         <a class="p-3 text-dark" href="/shapito">Shapito</a>
+                        <a class="p-3 text-dark" href="/currency">Currency</a>
                     </nav>
                     @else
                             <a class="p-3 text-dark" href="/login">Home</a>
                             <a class="p-3 text-dark" href="/login">News</a>
                             <a class="p-3 text-dark" href="/login">Articles</a>
                             <a class="p-3 text-dark" href="/login">Shapito</a>
+                            <a class="p-3 text-dark" href="/login">Currency</a>
                     @endauth
                     @endif
                     <!-- Right Side Of Navbar -->

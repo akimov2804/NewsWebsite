@@ -211,4 +211,24 @@ class HomeController extends Controller
         $response = json_decode($response, true);
         return view('read', ['act' => $response['root']['content']['body']]);
     }
+    public function Currency()
+    {
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => "https://openexchangerates.org/api/latest.json?app_id=6358d0d410414857b914cee71fb19993",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+        ));
+
+        $response = curl_exec($curl);
+        $response = json_decode($response, true);
+        curl_close($curl);
+        return view('currency', ['dollar' => $response['rates']]);
+    }
 }

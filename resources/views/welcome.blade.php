@@ -89,6 +89,7 @@
                         <a href='news'>News</a>
                         <a href='articles'>Articles</a>
                         <a href='shapito'>Shapito</a>
+                        <a href='currency'>Currency</a>
                     </div>
 
                     @else
@@ -96,6 +97,7 @@
                             <a href='login'>News</a>
                             <a href='login'>Articles</a>
                             <a href='login'>Shapito</a>
+                            <a href='login'>Currency</a>
                         </div>
                     @endauth
                     @endif
