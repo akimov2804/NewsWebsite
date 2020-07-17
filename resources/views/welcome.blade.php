@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Meduza</title>
+        <title>artNews</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Meduza
+                    artNews
                 </div>
                 @if (Route::has('login'))
                     @auth
@@ -90,6 +90,7 @@
                         <a href='articles'>Articles</a>
                         <a href='shapito'>Shapito</a>
                         <a href='currency'>Currency</a>
+                        <a href='sport'>Sport</a>
                     </div>
 
                     @else
@@ -98,6 +99,7 @@
                             <a href='login'>Articles</a>
                             <a href='login'>Shapito</a>
                             <a href='login'>Currency</a>
+                            <a href='login'>Sport</a>
                         </div>
                     @endauth
                     @endif

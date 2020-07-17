@@ -211,6 +211,11 @@ class HomeController extends Controller
         $response = json_decode($response, true);
         return view('read', ['act' => $response['root']['content']['body']]);
     }
+    public function ReadEurosport()
+    {
+        $rss = simplexml_load_file('https://www.eurosport.ru/rss.xml');
+        return view('sport', ['sportNews' => $rss]);
+    }
     public function Currency()
     {
         $curl = curl_init();

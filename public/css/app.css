@@ -2708,10 +2708,6 @@ fieldset:disabled a.btn {
   color: #fff;
   background-color: #3490dc;
   border-color: #3490dc;
-    position: absolute; /* Абсолютное позиционирование */
-    bottom: 3px;
-    left: 3px;
-    margin: 5px;
 }
 
 .btn-primary:hover {
@@ -5658,7 +5654,6 @@ a.badge-dark.focus {
   color: #1b1e21;
   background-color: #d6d8d9;
   border-color: #c6c8ca;
-    width: 100%;
 }
 
 .alert-dark hr {

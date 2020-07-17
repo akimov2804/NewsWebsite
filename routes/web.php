@@ -25,3 +25,4 @@ Route::get('/currency', 'HomeController@currency')->name('currency');
 Route::get('news/read/{id}', 'HomeController@ReadNews')->name('news/read');
 Route::get('articles/read/{id}', 'HomeController@ReadArticles')->name('articles/read');
 Route::get('shapito/read/{id}', 'HomeController@ReadShapito')->name('shapito/read');
+Route::get('sport', 'HomeController@ReadEurosport')->name('sport');

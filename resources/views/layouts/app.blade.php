@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Meduza</title>
+    <title>artNews</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -24,7 +24,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    The Real Russia, Today
+                    artNews
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -43,13 +43,14 @@
                         <a class="p-3 text-dark" href="/articles">Articles</a>
                         <a class="p-3 text-dark" href="/shapito">Shapito</a>
                         <a class="p-3 text-dark" href="/currency">Currency</a>
+                        <a class="p-3 text-dark" href="/sport">Sport</a>
                     </nav>
                     @else
                             <a class="p-3 text-dark" href="/login">Home</a>
                             <a class="p-3 text-dark" href="/login">News</a>
                             <a class="p-3 text-dark" href="/login">Articles</a>
                             <a class="p-3 text-dark" href="/login">Shapito</a>
-                            <a class="p-3 text-dark" href="/login">Currency</a>
+                            <a class="p-3 text-dark" href="/login">Sport</a>
                     @endauth
                     @endif
                     <!-- Right Side Of Navbar -->
